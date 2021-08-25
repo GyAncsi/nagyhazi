@@ -13,15 +13,22 @@ class Toltes:
 
     def draw(self):
         arcade.draw_circle_filled(self.x, self.y, self.rad, self.color)
+    def mozog(self):
+        self.x += 0.25
 
 
 
 p_toltes= Toltes(30, 550, 30, arcade.color.RED_BROWN)
 n_toltes = Toltes(200, 450, 10, arcade.color.BLUE)
-p_toltes.draw()
-n_toltes.draw()
 
-arcade.finish_render()
+while p_toltes.x != 600:
+    arcade.start_render()
+    n_toltes.draw()
+    p_toltes.mozog()
+    p_toltes.draw()
+    arcade.finish_render()
+
+
 arcade.run()
 
 
