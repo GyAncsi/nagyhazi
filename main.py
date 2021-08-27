@@ -1,4 +1,6 @@
 import arcade
+from Toltes import NToltes
+from Toltes import PToltes
 
 screenHight = 600
 screenWidth = 600
@@ -13,15 +15,11 @@ class Toltes:
 
     def draw(self):
         arcade.draw_circle_filled(self.x, self.y, self.rad, self.color)
-    def mozog(self):
-        self.x += 0.25
 
+p_toltes= PToltes(30, 550, 30, arcade.color.RED_BROWN)
+n_toltes = NToltes(200, 450, 10, arcade.color.BLUE)
 
-
-p_toltes= Toltes(30, 550, 30, arcade.color.RED_BROWN)
-n_toltes = Toltes(200, 450, 10, arcade.color.BLUE)
-
-while p_toltes.x != 600:
+while p_toltes.x <= 600:
     arcade.start_render()
     n_toltes.draw()
     p_toltes.mozog()
